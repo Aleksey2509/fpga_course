@@ -202,6 +202,10 @@ Generated sin:
 
 ![Sin\_output](DDS/pictures/sin_example.png)
 
+Zoomed in:
+
+![Sin\_zoom](DDS/pictures/sin_zoom.png)
+
 pictures:
 
 generated with:
