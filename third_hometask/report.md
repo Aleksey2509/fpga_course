@@ -192,6 +192,10 @@ endmodule
 
 ```
 
+lfsr design:
+
+![Dither\_design](DDS/pictures/lfsr_design.png)
+
 ### testbench:
 
 Generated sin:

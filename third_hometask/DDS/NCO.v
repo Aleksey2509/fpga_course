@@ -24,7 +24,7 @@ always @(posedge clk) begin
     if (rst)
         ph_accum <= 0;
     else
-        ph_accum <= ph_accum + step;
+        ph_accum <= ph_accum + step + dither;
 end
 
 
@@ -36,14 +36,14 @@ localparam PI = $atan(1)*4.0;
 initial begin: sin_lut 
 real phase;
     for (phase = 0; phase < 2**ADDR_WIDTH; phase=phase+1) begin
-       LUT[int' (phase) ] = ($sin(2*PI * phase / 2.0**ADDR_WIDTH)) * 2**(LUT_WIDTH - 2);
+       LUT[$rtoi (phase) ] = ($sin(2*PI * phase / 2.0**ADDR_WIDTH)) * 2**(LUT_WIDTH - 2);
     end
 end
 
 // dither generation
-wire [1:0] dither;
-// assign dither = 0;
-nco_dither_lsfr generator (.clk(clk), .rst(rst), .out(dither));
+wire [2:0] dither;
+assign dither = 0;
+// nco_dither_lsfr generator (.clk(clk), .rst(rst), .out(dither));
 
 // addr generation
 reg [ADDR_WIDTH-1:0] addr;
@@ -52,7 +52,7 @@ always @(posedge clk) begin
     if (rst)
         addr <= 0;
     else
-        addr <= dither + ph_accum [ADDR_WIDTH+FRACT_WIDTH-1:FRACT_WIDTH];
+        addr <= ph_accum [ADDR_WIDTH+FRACT_WIDTH-1:FRACT_WIDTH];
 end
 
 

@@ -11,13 +11,13 @@ from cocotb.clock import Clock
 async def test_nco(dut):
     cocotb.start_soon(Clock(dut.clk, 1, units="ns").start())
 
-    dut.step.value = 10;
+    dut.step.value = 20;
 
     dut.rst.value = 1
     await Timer(100, units = 'ns')
     dut.rst.value = 0
 
-    points_amount = 10000
+    points_amount = 1000
     sin_arr = np.zeros(points_amount)
 
 

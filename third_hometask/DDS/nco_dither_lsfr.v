@@ -1,6 +1,6 @@
 module nco_dither_lsfr (clk, rst, out);
 
-parameter OUT_SIZE=2;
+parameter OUT_SIZE=3;
 parameter LSFR_POLY='b11001001;
 
 localparam LSFR_SIZE=$clog2(LSFR_POLY);
