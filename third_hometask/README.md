@@ -245,6 +245,6 @@ With dither:
 
 Without dither:
 
-![No\_dither\_step\_1000\_output](DDS/pictures/sin_step1000_nodither.png)
-![No\_dither\_step\_2000\_output](DDS/pictures/sin_step2000_nodither.png)
-![No\_dither\_step\_4000\_output](DDS/pictures/sin_step4000_nodither.png)
+![No\_dither\_step\_1000\_output](DDS/pictures/sin_step1000nodither.png)
+![No\_dither\_step\_2000\_output](DDS/pictures/sin_step2000nodither.png)
+![No\_dither\_step\_4000\_output](DDS/pictures/sin_step4000nodither.png)
